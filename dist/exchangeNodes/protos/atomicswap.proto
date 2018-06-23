@@ -1,0 +1,38 @@
+
+syntax = "proto3";
+
+option objc_class_prefix = "HLW";
+
+package helloworld;
+
+service AtomicSwap {
+
+  //rpc AcceptInitiate (InitiatorSmartContractCreated) returns (AcceptorSmartContractCreated) {}
+  rpc ProcessInitiate(Initiate) returns (InitiateReply) {}
+  rpc ProcessInitiateSwap(InitiateSwap) returns (AcceptSwap) {}
+  rpc ProcessRedeemed(RedeemFinished) returns (RedeemFinished) {}
+}
+
+message Initiate {
+  double initiator_amount = 1;
+  double acceptor_amount = 2;
+}
+
+message InitiateReply {
+  string acceptor_address = 1;
+}
+
+message InitiateSwap {
+  string hash = 1;
+  string contract = 2;
+  string transaction = 3;
+  string initiator_wallet_address = 4;
+}
+
+message AcceptSwap {
+  string acceptor_swap_address = 1;
+}
+
+message RedeemFinished {
+  bool finished = 1;
+}
