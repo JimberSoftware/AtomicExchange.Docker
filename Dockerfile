@@ -67,4 +67,5 @@ RUN chmod +x /dist/atomicExchange
 RUN chmod +x /rundaemons.sh
 RUN mkdir -p /crypto/btc 
 RUN mkdir -p /crypto/tft
+RUN pip install protobuf
 CMD /rundaemons.sh
