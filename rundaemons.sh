@@ -4,7 +4,7 @@
 
 mkdir -p /crypto/btc
 bitcoind -daemon
-
+pip install protobuf
 # Start the second process
 tfchaind --network testnet -M cgtewb  -d /crypto/tft &
 
