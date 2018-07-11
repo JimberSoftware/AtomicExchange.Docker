@@ -29,7 +29,7 @@ printf 'thisismypw\n' | tfchainc wallet unlock
 
 
 
-cp -R /dist/qt /qt/5.11.1/gcc_64/ || true
+cp -R /dist/qt/* /qt/5.11.1/gcc_64/ || true
 export QT_WEBGL_WEBSOCKETSERVER_EXTERNAL=$EXTERNALURL$(hostname)
 echo $QT_WEBGL_WEBSOCKETSERVER_EXTERNAL
 /dist/atomicExchange -platform webgl &
